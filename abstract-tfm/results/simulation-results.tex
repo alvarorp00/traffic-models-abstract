@@ -1,0 +1,82 @@
+Las gráficas presentadas aquí representan las medianas obtenidas para cada configuración de densidad de conductores y nivel de saturación,
+todas ellas superpuestas de forma global.
+En concreto, veremos globalmente los resultados obtenidos para las métricas mencionadas en la sección \ref{SEC:EXPERIMENTALDESIGN},
+y posteriormente se analizarán con más detalle los resultados de cada métrica.
+
+En las figuras \ref{FIG:ACCIDENTS}, \ref{FIG:COMPLETED_DRIVERS} y \ref{FIG:TIMES} se pueden observar superpuestas las medianas de
+las métricas de las simulaciones para cada configuración, divididas por tipo de conductor.
+
+\paragraph{Accidentes}
+
+\begin{figure}[Porcentaje de accidentes por tipo de conductor.]{FIG:ACCIDENTS}{
+    Gráfico que representa el porcentaje de accidentes en relación con el total de conductores
+    para cada categoría de comportamiento al conducir. Cada punto en la gráfica corresponde al porcentaje que representan los conductores accidentados sobre el total de conductores que terminaron la simulación (un conductor termina cuando finaliza el recorrido o se accidenta).
+    Las categorías de conductores van desde Cautos a Temerarios. Un valor de 0\% indica que no hubo accidentes o no había conductores de ese tipo en las simulaciones. La gráfica ofrece una visión comparativa de cómo la propensión a los accidentes varía según el comportamiento de conducción.}
+    \image{15cm}{}{pictures/n_accidents.png}
+\end{figure}
+
+En la figura \ref{FIG:ACCIDENTS} se puede observar el porcentaje que representan los accidentes para cada grupo de conductores sobre el total de conductores que han terminado la simulación.
+Recuérdese que \textit{terminar} la simulación significa que el conductor o bien ha llegado a su destino, o bien ha sido eliminado por tener un accidente.
+Para esta estadística no se tiene en cuenta el número de conductores que se encuentren activos, puesto que no se puede saber a priori cuántos de ellos
+completarán o se accidentarán durante la simulación.
+
+En esta figura ha de observarse lo primero cuánto de dispersos o juntos están los resultados de cada grupo de conductores. En este caso aparece un caso curioso
+con los conductores cautos, y es que vemos que hay un alto grado de dispersión en los resultados. Esto a priori no tiene mucho sentido ya que, como se ha comentado,
+los conductores cautos deberían ser los que menos accidentes provocan. Sin embargo, esto puede deberse a que en las simulaciones con conductores cautos haya habido presencia de conductores que toman más riesgos, y por tanto
+ha habido más influencia en los resultados (por ejemplo, en las simulaciones combinadas con los conductores temerarios). Veremos esto en detalle en la sección
+\ref{SEC:ANALYSIS}.
+
+También existe dispersión en los resultados de los conductores normales, aunque mucho menos pronunciada. Esto puede deberse
+a que en las simulaciones con conductores normales, la presencia de los conductores que toman estos riesgos ha sido menor, y por tanto
+no ha habido tanta influencia en los resultados. En realidad, podemos ver que estos conductores se combinan con los agresivos, un nivel
+de riesgo por debajo respecto a los temerarios, y por tanto es de esperar que haya menos accidentes.
+
+Para los conductores agresivos y temerarios se observa una gran dispersión en los resultados, siendo estos grupos
+los que más accidentes han provocado. Es interesante ver esta dispersion de los datos, ya que en algunos casos se observa una gran variabilidad en los resultados,
+mientras que en otros casos los resultados son más homogéneos.
+
+\paragraph{Conductores que finalizaron la simulación}
+
+\begin{figure}[Mediana de conductores que completaron la simulación]{FIG:COMPLETED_DRIVERS}{
+    Gráfico que ilustra la cantidad de conductores que completaron exitosamente la simulación según su categoría de comportamiento al conducir.
+    Cada punto refleja la mediana del número de conductores de las simulaciones para esa categoría específica.
+    Las categorías abarcan desde Cautos a Temerarios. El gráfico proporciona una perspectiva sobre la distribución de conductores según
+    su comportamiento en las simulaciones realizadas.}
+    \image{15cm}{}{pictures/n_drivers.png}
+\end{figure}
+
+La figura \ref{FIG:COMPLETED_DRIVERS} por sí sola no aporta mucha información ya que dependerá de cuántas simulaciones tengan a cada grupo en concreto, pudiendo haber más de un tipo simplemente por cómo se han establecido en la tabla \ref{TB:SIMULATION_STRATEGIES}, pero es interesante ver cómo
+la relación entre esta figura y la figura \ref{FIG:ACCIDENTS} es inversa. Esto es, a mayor número de accidentes,
+menor número de conductores que completaron la simulación. Esto tiene sentido, ya que los conductores que
+provocan accidentes, primero son eliminados de la simulación, y segundo, provocan que otros conductores
+no solo sean eliminados sino que también se vean afectados por la congestión que provocan los accidentes.
+
+Otro hecho interesante es, tal y cómo se han planteado las simulaciones, y como se ha comentado ya, los conductores
+cautos son los que a priori deberían tener un menor número de conductores accidentados que completaron la simulación. 
+Sin embargo, el número de accidentes asociado a este tipo es más alto que el de los normales y arriesgados,
+y por tanto el número de conductores que completaron la simulación es menor (obsérvese cómo el pico es menos denso).
+
+\paragraph{Tiempos}
+
+\begin{figure}[Mediana de tiempos de finalización en función de la configuración.]{FIG:TIMES}{
+    Gráfico que muestra la mediana de tiempos de conducción para cada categoría de comportamiento al conducir y para cada simulación.
+    Cada punto en la gráfica representa la mediana del tiempo promedio obtenida de las simulaciones para esa categoría.
+    Las categorías varían desde Cautos hasta Temerarios. Esta representación ayuda a entender cómo el comportamiento al conducir puede influir
+    en la duración del tiempo de conducción.
+    }
+    \image{15cm}{}{pictures/avg_time.png}
+\end{figure}
+
+En la figura \ref{FIG:TIMES} se muestra la mediana de los tiempos de finalización de las simulaciones en función de la configuración.
+Un pequeño detalle a comentar es que, dado que en algunas simulaciones la presencia de algunos tipos de conductores es nula,
+el dato no aparece representado en la gráfica, apareciendo por ello algunos puntos aislados. Esto no afecta a la interpretación,
+y permite visualizar con mayor claridad los resultados que si se incorporaran todos los puntos para incluir el $0$.
+
+Si nos fijamos en el grueso de los resultados, vemos cómo los conductores cautos son los que menos dispersión presentan, y los
+que más tardan en completar el recorrido. A medida que los conductores son más arriesgados, la dispersión aumenta, y los tiempos
+en los valores más bajos tienen una tendencia claramente descendente. Se puede observar claramente una diferencia de $\approx 75$
+segundos entre el caso más rápido de un conductor cauto y el caso más rápido de un conductor temerario.
+
+Sin embargo, tomar estos valores sin tener en cuenta las otras gráficas es un error, ya que podría llevar a pensar que
+los conductores más agresivos son los que más rápido completan el recorrido, cuando en realidad, como se ha visto en la figura \ref{FIG:ACCIDENTS},
+son los que más accidentes y congestión provocan.

@@ -1,0 +1,240 @@
+Puesto que como se ha mencionado al principio de esta sección, el número de datos y gráficas obtenidas
+es elevado, se ha optado por mostrar los resultados más relevantes y significativos. Esto implica
+que de cara a mostrar los resultados en la carretera poco saturada y muy saturada, se utilizarán los casos más extremos
+disponibles (10 conductores cada 500m; 100 conductores cada 500m). En esta sección, el número de conductores accidentados
+se indica de forma absoluta, es decir, el número de conductores accidentados, y no como una proporción del total de conductores.
+
+\begin{figure}[Resultados para conductores Cautos y Temerarios, separados]{FIG:CAT_RECK_COMPARE_1}{Comparación de los resultados de las simulaciones para conductores 100\% Cautos y 100\% Temerarios en distintas condiciones de saturación de vía. La simulación muestra que los conductores cautos no han provocado ningún accidente. En cambio, los conductores temerarios sí, y además un menor número de conductores temerarios ha logrado completar la simulación en comparación a los cautos, si bien en un menor tiempo.
+    La barra indica la mediana del tiempo que cada conductor toma para completar el recorrido. El número encima de la barra es la mediana del número de conductores de ese tipo
+    que han completado la simulación. La línea roja indica la mediana del número de conductores de ese tipo envueltos en accidentes.}
+    \subfigure[SBFIG:CAUTOS_LOW_SATURATION]{100\% Cautos - Vía Poco Saturada}{\image{7cm}{5cm}{pictures/sims/sim_1_0.png}} \hspace{1cm}
+    \subfigure[SBFIG:CAUTOS_HIGH_SATURATION]{100\% Cautos - Vía Saturada}{\image{7cm}{5cm}{pictures/sims/sim_1_9.png}} \vspace{1cm}
+    
+    \subfigure[SBFIG:RECLKESS_LOW_SATURATION]{100\% Temerarios - Vía Poco Saturada}{\image{7cm}{5cm}{pictures/sims/sim_5_0.png}} \hspace{1cm}
+    \subfigure[SBFIG:RECLKESS_HIGH_SATURATION]{100\% Temerarios - Vía Saturada}{\image{7cm}{5cm}{pictures/sims/sim_5_9.png}}
+\end{figure}
+
+Como se ha mencionado anteriormente, en la figura \ref{FIG:ACCIDENTS} se puede observar un pico en el número de accidentes para
+los conductores cautos, y en cambio en la figura \ref{FIG:CAT_RECK_COMPARE_1} se puede observar que los conductores cautos no han provocado ningún accidente.
+
+Esto parece que confirma la hipótesis de que los conductores cautos no provocan accidentes, y que por tanto el pico observado en la figura \ref{FIG:ACCIDENTS}
+se ha de deber a la influencia de los conductores agresivos. 
+
+\begin{figure}[Resultados para conductores Cautos y Temerarios, conviviendo 1]{FIG:CAT_RECK_9010}{Resultados de simulación con 90\% cautos y 10\% temerarios en condiciones de poca y mucha saturación.}
+    \subfigure[SBFIG:CAT_RECK_9010_1]{90\% Cautos + 10\% Temerarios - Vía Poco Saturada}{\image{7cm}{5cm}{pictures/sims/sim_8_0.png}} \hspace{1cm}
+    \subfigure[SBFIG:CAT_RECK_9010_2]{90\% Cautos + 10\% Temerarios - Vía Saturada}{\image{7cm}{5cm}{pictures/sims/sim_8_9.png}} \vspace{1cm}
+\end{figure}
+
+\begin{figure}[Resultados para conductores Cautos y Temerarios, conviviendo 2]{FIG:CAT_RECK_5050}{Resultados de simulación con 50\% cautos y 50\% temerarios en condiciones de poca y mucha saturación.}
+    \subfigure[SBFIG:CAT_RECK_5050_1]{50\% Cautos + 50\% Temerarios - Vía Poco Saturada}{\image{7cm}{5cm}{pictures/sims/sim_6_0.png}} \hspace{1cm}
+    \subfigure[SBFIG:CAT_RECK_5050_2]{50\% Cautos + 50\% Temerarios - Vía Saturada}{\image{7cm}{5cm}{pictures/sims/sim_6_9.png}} \vspace{1cm}
+\end{figure}
+
+Las figuras \ref{FIG:CAT_RECK_9010} y \ref{FIG:CAT_RECK_5050} muestran que una alta proporción de conductores temerarios puede causar accidentes entre los conductores cautos.
+No obstante, si solo hay un $10\%$ de temerarios, los accidentes son mínimos, incluso en alta saturación.
+
+Sorprendentemente, la presencia de estos conductores temerarios no mejora significativamente el tiempo promedio ni la cantidad
+de conductores que completan el trayecto, comparado con un sistema de solo conductores cautos. De hecho, en alta saturación,
+se reduce la eficiencia debido a accidentes. Por ello, se deduce que tener conductores agresivos en un sistema dominado por cautos no
+es beneficioso: en una distribución $90-10$ las diferencias son mínimas, pero en $50-50$ los accidentes aumentan considerablemente.
+
+Si contrastamos ahora los resultados de la mediana del tiempo que tarda cada conductor cauto en completar el trayecto junto con la mediana
+del número de accidentes, podemos observar que en la figura \ref{FIG:CAUTIOUS_COMPARISON_ACCIDENTS} se observan las tres líneas correspondientes a las simulaciones
+con $100\%$ conductores cautos, $90\%$ conductores cautos y $50\%$ conductores cautos, mostradas en las figuras \ref{FIG:CAT_RECK_COMPARE_1},
+\ref{FIG:CAT_RECK_9010} y \ref{FIG:CAT_RECK_5050} respectivamente. Es interesante ver que, efectivamente, la presencia de conductores
+temerarios perjudica en todos los casos el tiempo promedio de travesía (en las figuras anteriores mencionadas solo se mostraban los niveles
+de saturación más extremos), y que además, a mayor presencia de conductores temerarios y mayor saturación, mayor es el número de accidentes.
+
+\begin{figure}[Mediana de tiempos y accidentes de conductores Cautos]{FIG:CAUTIOUS_COMPARISON_ACCIDENTS}{
+    Gráfico que muestra la mediana de tiempos de conducción y la mediana de accidentes para conductores cautos en diferentes configuraciones con conductores temerarios
+    y niveles de saturación. Cada línea en la gráfica representa la mediana del tiempo promedio obtenida de las simulaciones para
+    una configuración específica, y cada punto en esa línea representa un nivel diferente de saturación de la vía.
+    Encima de cada punto, se muestra el número de accidentes de los conductores cautos para ese nivel y configuración.
+}
+    \image{14cm}{}{pictures/cautious_comparison_with_accidents.png}
+\end{figure}
+
+\begin{figure}[Resultados para conductores Normales y Agresivos, separados]{FIG:NRM_AGG_CMP}{Comparación de los resultados de las simulaciones para conductores 100\% Normales y 100\% Agresivos en distintas condiciones de saturación de vía. La simulación muestra que los conductores normales no han provocado ningún accidente. En cambio, los conductores agresivos sí, y además un menor número de conductores agresivos ha logrado completar la simulación en comparación a los normales, si bien en un menor tiempo.}
+    \subfigure[SBFIG:NRM_LOW_SATURATION]{100\% Normales - Vía Poco Saturada}{\image{7cm}{5cm}{pictures/sims/sim_2_0.png}} \hspace{1cm}
+    \subfigure[SBFIG:NRM_HIGH_SATURATION]{100\% Normales - Vía Saturada}{\image{7cm}{5cm}{pictures/sims/sim_2_9.png}} \vspace{1cm}
+    
+    \subfigure[SBFIG:AGGRESSIVE_LOW_SATURATION]{100\% Agresivos - Vía Poco Saturada}{\image{7cm}{5cm}{pictures/sims/sim_4_0.png}} \hspace{1cm}
+    \subfigure[SBFIG:AGGRESSIVE_HIGH_SATURATION]{100\% Agresivos - Vía Saturada}{\image{7cm}{5cm}{pictures/sims/sim_4_9.png}}
+\end{figure}
+
+\begin{figure}[Resultados para conductores Normales y Agresivos, conviviendo 1]{FIG:NRM_AGG_9010}{
+    Resultados de simulación con 90\% normales y 10\% agresivos en condiciones de poca y mucha saturación.}
+    \subfigure[SBFIG:NRM_AGG_9010_1]{90\% Normales + 10\% Agresivos - Vía Poco Saturada}{\image{7cm}{5cm}{pictures/sims/sim_9_0.png}} \hspace{1cm}
+    \subfigure[SBFIG:NRM_AGG_9010_2]{90\% Normales + 10\% Agresivos - Vía Saturada}{\image{7cm}{5cm}{pictures/sims/sim_9_9.png}} \vspace{1cm}
+\end{figure}
+
+\begin{figure}[Resultados para conductores Normal y Agresivos, conviviendo 2]{FIG:NRM_AGG_5050}{
+    Resultados de simulación con 50\% normales y 50\% agresivos en condiciones de poca y mucha saturación.}
+    \subfigure[SBFIG:NRM_AGG_5050_1]{50\% Normales + 50\% Agresivos - Vía Poco Saturada}{\image{7cm}{5cm}{pictures/sims/sim_7_0.png}} \hspace{1cm}
+    \subfigure[SBFIG:NRM_AGG_5050_2]{50\% Normales + 50\% Agresivos - Vía Saturada}{\image{7cm}{5cm}{pictures/sims/sim_7_9.png}} \vspace{1cm}
+\end{figure}
+
+\begin{figure}[Mediana de tiempos y accidentes de conductores Normales]{FIG:NORMAL_COMPARISON_ACCIDENTS}{
+    Gráfico que muestra la mediana de tiempos de conducción y de accidentes para conductores normales en diferentes configuraciones
+    con conductores agresivos y niveles de saturación. Cada línea en la gráfica representa la mediana del tiempo promedio obtenida de las simulaciones para
+    una configuración específica, y cada punto en esa línea representa un nivel diferente de saturación de la vía.
+    Encima de cada punto, se muestra el número de accidentes de los conductores normales para ese nivel y configuración.
+}
+    \image{14cm}{}{pictures/normal_comparison_with_accidents.png}
+\end{figure}
+
+Las figuras \ref{FIG:NRM_AGG_CMP}, \ref{FIG:NRM_AGG_9010} y \ref{FIG:NRM_AGG_5050} muestran que los conductores normales reaccionan de forma similar
+a los cautos ante la presencia de conductores agresivos. Es decir, introducir un pequeño o moderado número de conductores agresivos no mejora los resultados
+comparados con un sistema de solo conductores normales.
+
+De nuevo, volvemos a hacer una comparación de los resultados de la mediana del tiempo que tarda cada conductor normal en completar el trayecto junto con la mediana
+del número de accidentes. Podemos observar los resultados en la figura \ref{FIG:NORMAL_COMPARISON_ACCIDENTS}, en que se observan las tres líneas correspondientes a las simulaciones
+con $100\%$ conductores normales, $90\%$ conductores normales y $50\%$ conductores normales, mostradas en las figuras \ref{FIG:NRM_AGG_CMP},
+\ref{FIG:NRM_AGG_9010} y \ref{FIG:NRM_AGG_5050} respectivamente. En este caso existe una diferencia más notable entre los resultados de las simulaciones
+si se compara con el caso de los conductores cautos. Una presencia del $10\%$ de conductores agresivos genera un muy ligero crecimiento de los accidentes y apenas
+afecta al tiempo promedio de travesía para este tipo de conductores. Sin embargo, si la presencia de conductores agresivos aumenta hasta el $50\%$, el número
+de accidentes crece, aunque el tiempo total de travesía se reduce ligeramente.
+
+\begin{figure}[Resultados para conductores Arriesgados]{FIG:RSK_AGG_CMP}{Resultados de simulación con 100\% conductores arriesgados en condiciones de poca y mucha saturación.}
+    \subfigure[SBFIG:RSK_LOW_SATURATION]{100\% Arriesgados - Vía Poco Saturada}{\image{7cm}{5cm}{pictures/sims/sim_3_0.png}} \hspace{1cm}
+    \subfigure[SBFIG:RSK_HIGH_SATURATION]{100\% Arriesgados - Vía Saturada}{\image{7cm}{5cm}{pictures/sims/sim_3_9.png}} \vspace{1cm}
+\end{figure}
+
+\begin{figure}[Resultados para conductores Arriesgados y Agresivos, conviviendo]{FIG:RSK_AGG_5050}{Resultados de simulación con 50\% arriesgados y 50\% agresivos en condiciones de poca y mucha saturación.}
+    \subfigure[SBFIG:RSK_AGG_5050_1]{50\% Arriesgados + 50\% Agresivos - Vía Poco Saturada}{\image{7cm}{5cm}{pictures/sims/sim_11_0.png}} \hspace{1cm}
+    \subfigure[SBFIG:RSK_AGG_5050_2]{50\% Arriesgados + 50\% Agresivos - Vía Saturada}{\image{7cm}{5cm}{pictures/sims/sim_11_9.png}} \vspace{1cm}
+\end{figure}
+
+En las figuras \ref{FIG:RSK_AGG_CMP} y \ref{FIG:RSK_AGG_5050}, notamos que los conductores arriesgados raramente causan accidentes por sí solos, excepto en situaciones de alta saturación.
+Pero al mezclarse con conductores agresivos, los accidentes aumentan considerablemente y menos conductores logran completar la simulación.
+A pesar de esto, el tiempo promedio no se altera significativamente. Este patrón es similar al observado cuando conductores cautos y normales
+interactúan con aquellos más agresivos.
+
+\begin{figure}[Resultados para diferentes conductores, conviviendo]{FIG:MIX_DRVS_RSK}{Resultados de simulación con $5\%$ cautos, $15\%$ normales, $60\%$ arriesgados, $15\%$ agresivos y $5\%$ temerarios.}
+    \subfigure[SBFIG:MIX_DRVS_RSK_1]{$5\%$ cautos + $15\%$ normales + $60\%$ arriesgados + $15\%$ agresivos + $5\%$ temerarios - Vía Poco Saturada}{\image{7cm}{5cm}{pictures/sims/sim_18_0.png}} \hspace{1cm}
+    \subfigure[SBFIG:MIX_DRVS_RSK_2]{$5\%$ cautos + $15\%$ normales + $60\%$ arriesgados + $15\%$ agresivos + $5\%$ temerarios - Vía Saturada}{\image{7cm}{5cm}{pictures/sims/sim_18_9.png}} \vspace{1cm}
+\end{figure}
+
+Este análisis muestra una simulación con una mezcla variada de tipos de conductores (figura \ref{FIG:MIX_DRVS_RSK}).
+En este caso predominan los conductores arriesgados pero mantienen una presencia notable tanto conductores normales como agresivos y,
+en menor medida, cautos y temerarios.
+
+La combinación de todos estos estilos de conducción presenta resultados interesantes. Con poca saturación
+no hay una mejora significativa en el tiempo promedio de travesía comparado con otros grupos menos variados,
+y la tasa de accidentes sigue siendo notable.
+
+En condiciones de vía saturada el número de accidentes es elevado y el tiempo de travesía se incrementa,
+lo que indica que la presencia de conductores agresivos y temerarios afecta negativamente a la fluidez del tráfico,
+especialmente cuando hay un predominio de conductores arriesgados.
+
+\begin{figure}[Mediana de tiempos y accidentes de conductores Arriesgados]{FIG:RISKY_COMPARISON_ACCIDENTS}{
+    Gráfico que muestra la mediana de tiempos de conducción y accidentes para conductores arriesgados en diferentes configuraciones
+    con otros tipos de conductores y niveles de saturación. Cada línea en la gráfica representa la mediana del tiempo promedio obtenida de las simulaciones para
+    una configuración específica, y cada punto en esa línea representa un nivel diferente de saturación de la vía.
+    Encima de cada punto, se muestra la mediana de accidentes de los conductores arriesgados para ese nivel y configuración.
+    El grupo 5-15-60-15-5 es el \% de cautos, normales, arriesgados, agresivos y temerarios respectivamente.
+}
+    \image{14cm}{}{pictures/risky_comparison_with_accidents.png}
+\end{figure}
+
+Si ahora comparamos en la figura \ref{FIG:RISKY_COMPARISON_ACCIDENTS} los resultados de las simulaciones de los conductores arriesgados
+en función de la presencia de otros tipos de conductores (siendo ellos el $100\%$, $50\%$ combinado con agresivos o $60\%$ en el caso mixto de
+la figura \ref{FIG:MIX_DRVS_RSK}), podemos observar que la presencia de conductores agresivos reduce la mediana del tiempo que toman
+para terminar la travesía a costa de aumentar el número de accidentes.
+
+Por otro lado, cuando son este tipo de conductores los que predominan ($100\%$), el número de accidentes es el menor de los tres casos,
+aunque son ligeramente más lentos que en presencia de agresivos, pero más rápidos que en el caso mixto. Y por último, el caso mixto
+resulta el más lento para este tipo de conductores, si bien el número de accidentes es menor que con un $50\%$ de agresivos pero mayor
+que con un $100\%$ de conductores arriesgados.
+
+Una vez que ha quedado claro cómo se comportan los diferentes tipos de conductores en función de la saturación de la vía y de la presencia
+de otros tipos de conductores, se puede proceder a analizar los resultados para otros tipos de combinaciones de conductores.
+
+\begin{figure}[Comparación de tiempos y accidentes por tipo de conductor]{FIG:TYPE_COMPARISON_ACCIDENTS}{
+    Gráfico que muestra la media de medianas de tiempos de conducción y accidentes para cada tipo de conductor en una configuración 100\% pura y diferentes niveles de saturación.
+    Cada línea en la gráfica representa la mediana del tiempo promedio obtenida de las simulaciones para un tipo de conductor en particular, y cada punto en esa línea representa un nivel diferente de saturación de la vía.
+    Encima de cada punto, se muestra la mediana de accidentes para ese nivel y tipo de conductor.
+}
+    \image{14cm}{}{pictures/type_comparison_with_accidents.png}
+\end{figure}
+
+En la figura \ref{FIG:TYPE_COMPARISON_ACCIDENTS} se puede observar el comportamiento de cada tipo de conductor en función de la saturación de la vía
+de forma aislada. Se puede observar claramente como cada tipo de conductor aparece ordenado de menor a mayor tiempo de travesía, y de mayor a menor
+número de accidentes. Esto es, los conductores cautos son los que más tiempo tardan en completar la travesía, y los que menos accidentes provocan,
+mientras que los conductores temerarios son los que menos tiempo tardan en completar la travesía, y los que más accidentes provocan.
+
+Además, añadido al dato que se ha visto anteriormente en esta sección, se puede saber que pese a tomar más tiempo en completar la travesía,
+un mayor número de estos será capaz de completarla en el mismo lapso de tiempo que los conductores temerarios, ya que estos últimos provocan
+más accidentes y por tanto más congestión. Esto último puede observarse en la figura \ref{FIG:COMPARISON}, en la que se muestra la evolución
+de los conductores que terminan la simulación en función de la saturación de la vía y de la presencia de otro grupo más agresivo.
+
+\begin{figure}[Mediana de tiempos y accidentes en diferentes distribuciones]{FIG:CONFIG_COMPARISON_ACCIDENTS}{
+    Gráfico que muestra la media de medianas de tiempos de conducción y la mediana de accidentes en diferentes configuraciones de conductores y niveles de saturación.
+    Se calcula la mediana para cada valor en función del tipo de conductor y la saturación, y luego se calcula la media de esas medianas.
+    Cada línea en la gráfica representa el tiempo promedio obtenido de las simulaciones para una configuración específica, y cada punto en esa línea representa un nivel diferente de saturación de la vía.
+    Encima de cada punto, se muestra la media de accidentes para ese nivel y configuración.
+    El grupo 40-30-15-10-5 es el \% de cautos, normales, arriesgados, agresivos y temerarios respectivamente. De igual forma para el grupo
+    5-10-15-30-40.
+}
+    \image{14cm}{}{pictures/config_comparison_with_accidents.png}
+\end{figure}
+
+En la figura \ref{FIG:CONFIG_COMPARISON_ACCIDENTS} se puede observar una comparativa de los resultados de las simulaciones para tres tipos de situaciones,
+una en la que hay la misma presencia de cada tipo de conductor (equiprobable), otra en la que hay un $40\%$ de cautos, $30\%$ de normales,
+$15\%$ de arriesgados, $10\%$ de agresivos y $5\%$ de temerarios, y otra en la que se sigue una distribución inversa a esta última.
+
+La simulación con más conductores cautos y normales genera menos accidentes y tiempos similares a la equiprobable,
+aunque esta última tiene más accidentes. En contraste, la distribución con predominio de conductores arriesgados y agresivos provoca más accidentes,
+pero es la más rápida en conjunto.
+
+Un detalle importante sobre los gráficos que incluyen resultados con conductores temerarios (y agresivos) es que no son tan estables como
+cuando se trata de medianas en los otros grupos, principalmente debido a lo que se mostró en la figura \ref{FIG:SUCCESS_RATE}, donde el \%
+de simulaciones exitosas ($<10\%$ de accidentes) en las que estos conductores están presentes con gran proporción es menor que en los otros grupos,
+por lo que menos simulaciones se tienen en cuenta para calcular la mediana.
+
+% \begin{figure}[Mediana de conductores cautos y temerarios que completaron la simulación]{FIG:CT_FINISHING}{
+%     Gráfico que muestra la mediana de conductores cautos y temerarios que lograron completar la simulación en diferentes configuraciones. 
+%     Se presenta una comparación directa entre diferentes proporciones de conductores cautos y temerarios, ayudando a entender cómo estos dos tipos de conductores se desempeñan bajo diferentes circunstancias.
+% }
+%     \image{14cm}{}{pictures/cautious_reckless_finishing_comparison.png}
+% \end{figure}
+
+% \begin{figure}[Mediana de conductores normales y agresivos que completaron la simulación]{FIG:NA_FINISHING}{
+%     Gráfico que muestra la mediana de conductores normales y agresivos que lograron completar la simulación en diferentes configuraciones. 
+%     Se presenta una comparación directa entre diferentes proporciones de conductores normales y agresivos, revelando las diferencias en el desempeño entre estos dos grupos.
+% }
+%     \image{14cm}{}{pictures/normal_aggressive_finishing_comparison.png}
+% \end{figure}
+
+\begin{figure}[Conductores que terminan en Cautos/Temerarios y Normales/Agresivos]{FIG:COMPARISON}{
+    Comparativa del número de conductores que terminan exitosamente la simulación para las combinaciones de conductores cautos y temerarios, y normales y agresivos.
+    En la primera fila se muestran los resultados para combinaciones de cautos y temerarios, y en la segunda fila para combinaciones de normales y agresivos.
+    En la primera columna se muestra la media de las medianas para las distintas condiciones de saturación de la vía, y en la segunda columna se muestra
+    la evolución de las medianas para cada condición de saturación. Todo ello distinguiendo los dos tipos de conductores en cada caso.
+    }
+    % Primera fila: Cautos y Temerarios
+    \subfigure[SBFIG:BAR_CAUT_RECK]{Gráfico de barras - Cautos y Temerarios}{\image{7cm}{5cm}{pictures/cautious_reckless_finishing_comparison.png}} \hspace{1cm}
+    \subfigure[SBFIG:EVOL_CAUT_RECK]{Evolución de finalizaciones - Cautos y Temerarios}{\image{7cm}{5cm}{pictures/evolution_finishing_comparison_cautious_reckless.png}} \vspace{1cm}
+
+    % Segunda fila: Normales y Agresivos
+    \subfigure[SBFIG:BAR_NORM_AGGRESS]{Gráfico de barras - Normales y Agresivos}{\image{7cm}{5cm}{pictures/normal_aggressive_finishing_comparison.png}} \hspace{1cm}
+    \subfigure[SBFIG:EVOL_NORM_AGGRESS]{Evolución de finalizaciones - Normales y Agresivos}{\image{7cm}{5cm}{pictures/evolution_finishing_comparison_normal_aggressive.png}}
+\end{figure}
+
+Finalmente, en la figura \ref{FIG:COMPARISON} se puede observar la evolución del número de conductores que terminan la simulación
+en dos casos distintos: en el primero, se muestran los resultados para combinaciones de cautos y temerarios, y en el segundo para combinaciones de normales y agresivos.
+
+El gráfico de barras muestra la media de las medianas de los resultados de las simulaciones en las distintas condiciones de saturación de la vía,
+donde se observa de forma absoluta que cuando hay un $100\%$ de conductores cautos hay un mayor número de conductores que terminan la simulación
+que en presencia de un $10\%$ de conductores temerarios (menos incluso que si se hace la proporción del $90\%$ correspondiente al caso con el $100\%$).
+Y se ve cómo este número de conductores que terminan la simulación disminuye considerablemente
+cuando hay un $50\%$ de conductores temerarios (cuando teóricamente debería ser la mitad del caso con el $100\%$).
+Otro hecho interesante es cómo una presencia del $100\%$ de temerarios no obtiene mejores valores absolutos
+que un $50\%$ de temerarios (en presencia de cautos), lo que indica que la presencia de conductores cautos ayuda a que los temerarios terminen la simulación.
+
+Respecto al caso de los conductores normales y agresivos, se puede observar una situación similar a diferencia del caso con presencia del $100\%$ de agresivos,
+que obtiene mejores valores absolutos que el caso con presencia del $50\%$ de agresivos para este tipo de conductor (siendo esperable pues, en teoría, deberían finalizar el doble
+que en el caso con presencia del $50\%$, algo que no ocurre en el caso de los temerarios).
+
+En el segundo tipo de gráfico se muestra la evolución de estas medianas en función de la saturación de la vía. En este caso se puede observar
+que se mantiene el resultado global que indica el gráfico de barras.

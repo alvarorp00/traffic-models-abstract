@@ -1,0 +1,97 @@
+En este apartado se discutirán los resultados obtenidos y se compararán con los objetivos planteados en la sección \ref{SEC:OBJETIVOS}.
+
+\paragraph{Revisión de los principales hallazgos}
+
+A lo largo de las simulaciones realizadas, identificamos diversas dinámicas en función de la composición de los conductores y las condiciones de saturación de la vía. Específicamente, pudimos constatar que:
+
+\phantom{    }Los conductores arriesgados por sí solos no suelen ser causantes de accidentes excepto en condiciones de alta saturación.
+Sin embargo, cuando se combinan con conductores agresivos, la tasa de accidentes aumenta significativamente.
+
+\phantom{    }Una proporción alta de conductores temerarios puede conducir a que los conductores cautos provoquen accidentes.
+A pesar de ello, con una proporción menor de conductores temerarios, la tasa de accidentes sigue siendo baja.
+
+\phantom{    }No se observaron mejoras significativas en términos de tiempo y número de conductores que completan la carretera cuando
+se incluyó un grupo de conductores agresivos, independientemente de la presencia de conductores cautos o normales.
+
+\phantom{    }En los grupos de conductores donde los agresivos y temerarios eran predominantes, se observó que pese a que el tiempo promedio
+de travesía era menor, por contra, la tasa de accidentes era superior y la cantidad de conductores que terminaban la simulación exitosamente
+era menor en comparación con las simulaciones con grupos cautos y normales predominantes.
+La posible explicación es que los conductores agresivos y temerarios, al conducir de forma más imprudente,
+provocan accidentes y situaciones de riesgo que afectan al global de los conductores, saturando la vía y dejando secciones congestionadas, y por tanto,
+a la fluidez del tráfico.
+
+\paragraph{Interpretación y especulación}
+
+Aquí se discutirán las implicaciones de los hallazgos y se propondrán posibles aplicaciones prácticas.
+
+\begin{description}
+    \item[Relación entre conductores agresivos o temerarios y el resto:] \phantom{-}
+    \begin{description}
+        \item[Interpretación:] La combinación de estos dos tipos de conductores con los demás parece generar un entorno más propenso a los accidentes.
+        Esto puede deberse a una posible falta de previsibilidad en sus acciones, lo que lleva a reacciones en cadena, bien por apurar distancias de seguridad o velocidades,
+        lo que en casos en que los tiempos de reacción son críticos puede provocar accidentes (un conductor de este tipo con tiempo de reacción lento 
+        difícilmente podrá evitar un accidente si el vehículo de delante frena de forma repentina).
+        \item[Especulación:] Si se educara a los conductores sobre los riesgos de conducir de manera agresiva o arriesgada,
+        especialmente cuando se combina con otros estilos de conducción, podría haber una disminución en la tasa de accidentes.
+    \end{description}
+
+    \item[Influencia de la saturación del tráfico:] \phantom{-}
+    \begin{description}
+        \item[Interpretación:] A medida que aumenta la saturación, parece haber un aumento en la ocurrencia de accidentes,
+        lo que sugiere que el espacio limitado y las mayores interacciones entre vehículos exacerban los efectos de los estilos de conducción.
+        \item[Especulación:] Implementar sistemas inteligentes de gestión del tráfico o diseñar infraestructuras viales más adecuadas podría mitigar los efectos negativos de la saturación.
+    \end{description}
+
+    \item[Efectos de la diversidad de conductores:] \phantom{-}
+    \begin{description}
+        \item[Interpretación:] Aunque uno podría pensar que tener una diversidad de estilos de conducción podría ser beneficioso para dispersar el tráfico y mejorar la fluidez,
+        los resultados sugieren que la mezcla incorrecta puede tener el efecto opuesto, por ejemplo al incluir conductores agresivos o temerarios.
+        \item[Especulación:] Tal vez haya un equilibrio óptimo o proporción de diferentes estilos de conducción que maximice la eficiencia y seguridad del tráfico.
+        Las futuras investigaciones podrían centrarse en encontrar esta proporción.
+    \end{description}
+
+    \item[Aplicaciones prácticas:] \phantom{-}
+    \begin{description}
+        \item[Interpretación:] Estos hallazgos pueden ser esenciales para diseñar campañas de concienciación vial o para la formación de conductores.
+        \item[Especulación:] Con el avance de la tecnología de vehículos autónomos, estos datos podrían ser cruciales. Si entendemos cómo diferentes personalidades y
+        estilos de conducción afectan el flujo del tráfico, podríamos programar vehículos autónomos para adaptarse a estos estilos o incluso para optimizar el tráfico en general.
+    \end{description}
+\end{description}
+
+\paragraph{Limitaciones}
+
+En este apartado se discutirán las limitaciones del estudio y se propondrán posibles mejoras.
+
+\begin{description}
+    \item[Modelo Simplificado:] \phantom{-}
+    \begin{description}
+        \item[Descripción:] Los modelos de simulación, aunque intentan capturar la esencia del comportamiento del tráfico, son simplificaciones de la realidad. Pueden no incluir todos los factores y variables que influyen en el comportamiento real de los conductores.
+        \item[Impacto:] Existen fenómenos observados en la realidad que no se manifiestan en la simulación, y viceversa.
+    \end{description}
+
+    \item[Estilos de Conducción Predeterminados:] \phantom{-}
+    \begin{description}
+        \item[Descripción:] El estudio clasifica a los conductores en categorías discretas (como "cauto" o "agresivo"), lo que podría no reflejar la variedad y continuidad de estilos de conducción en la realidad.
+        \item[Impacto:] La categorización puede conducir a interpretaciones simplificadas y no capturar comportamientos intermedios o combinados.
+    \end{description}
+
+    \item[Condiciones Estáticas de la Simulación:] \phantom{-}
+    \begin{description}
+        \item[Descripción:] Las condiciones de la simulación (como la configuración del tráfico o las condiciones meteorológicas) permanecen constantes, a diferencia de las condiciones variables en carreteras reales.
+        \item[Impacto:] Los resultados pueden no reflejar completamente cómo reaccionarían los conductores ante cambios en el entorno.
+    \end{description}
+
+    \item[No Consideración de Factores Humanos Complejos:] \phantom{-}
+    \begin{description}
+        \item[Descripción:] Factores como el cansancio, distracciones, decisiones impulsivas o habilidades de conducción no se incorporan en el modelo. 
+        Lizbetin \cite{lizbetin2017} sugiere que estos factores tienen un impacto significativo en el comportamiento del conductor.
+        \item[Impacto:] La simulación puede subestimar o sobreestimar ciertos comportamientos o resultados en situaciones reales.
+    \end{description}
+
+    \item[Generalización de Resultados:] \phantom{-}
+    \begin{description}
+        \item[Descripción:] Aunque los resultados de la simulación ofrecen perspectivas valiosas, la generalización de estos hallazgos a todos los contextos y situaciones del tráfico podría ser prematura.
+        \item[Impacto:] Las recomendaciones o intervenciones basadas en estos resultados deben aplicarse con precaución en contextos diferentes al de la simulación.
+    \end{description}
+\end{description}
+

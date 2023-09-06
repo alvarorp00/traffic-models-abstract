@@ -1,0 +1,157 @@
+\paragraph{Premisas Generales}
+
+% Breve introducción a la necesidad y el objetivo del modelo
+
+Puesto que el objetivo del modelo es analizar el comportamiento de los conductores en un entorno controlado, es necesario definir
+un conjunto de premisas generales que permitan la simulación de escenarios realistas -si bien no excesivamente complejos, puesto que con un modelo
+simple es posible obtener resultados valiosos- de los cuales se puedan extraer conclusiones relevantes.
+
+% La importancia de la representatividad y precisión en la simulación del tráfico vehicular
+
+La representatividad y precisión de los datos obtenidos de las simulaciones es fundamental para poder realizar un análisis detallado y
+extraer conclusiones válidas. Por ello, es necesario que el modelo sea capaz de simular escenarios que reflejen fielmente las condiciones
+reales de las carreteras, incluyendo factores como la densidad vehicular, la velocidad, la distancia de seguridad, la agresividad de los conductores,
+diferentes tipos de vehículos y los tiempos de reacción, obviando factores como el clima o el estado de la carretera, que pueden influir en el
+comportamiento de los conductores pero que no son relevantes para el propósito del modelo, además de ser más difíciles de simular.
+
+\paragraph{Tipos de Conductores}
+
+% Cautos, normales, arriesgados, agresivos, temerarios
+
+Como se mencionó en la sección \ref{SEC:BACKGROUND}, existen diferentes tipos de conductores, que varían desde los más cautos hasta los más agresivos.
+Para poder realizar un análisis detallado, es necesario definir un conjunto de tipos de conductores que permitan representar la diversidad de
+comportamientos que se pueden observar en las carreteras. En este caso, se han definido cinco tipos de conductores, que se describen en la tabla
+\ref{TB:DRIVER_TYPES}.
+
+\begin{table}[Tipos de conductores]{TB:DRIVER_TYPES}{Características de los conductores del modelo.}
+    \begin{tabular}{| c | c | c |}
+        % {\textwidth}{@{\extracolsep{\fill}} | c | c | c | c | }
+        \hline
+        \textbf{Tipo} & \textbf{Distancia de Seguridad} & \textbf{Distancia de Visión}\\
+        \hline
+        \textbf{Cauto} & 37.5 metros & 100 metros \\
+        \hline
+        \textbf{Normal} & 31.25 metros & 100 metros \\
+        \hline
+        \textbf{Arriesgado} & 25 metros & 100 metros \\
+        \hline
+        \textbf{Agresivo} & 18.75 metros & 100 metros \\
+        \hline
+        \textbf{Muy agresivo} & 12.5 metros & 100 metros \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Respecto a la velocidad máxima establecida, que dependerá de cada vehículo y que se puede consultar en la tabla \ref{TB:VEHIC_TYPES}, se han considerado los
+valores máximos a los que podrán circular cada conductor (que dependerá del tipo de vehículo que conduzca), y que se muestran en la tabla \ref{TB:DRIVER_TYPES}.
+Además, se ha establecido un campo de visión para la toma de decisiones de 100 metros, igual para todos los conductores.
+
+Por último, es necesario definir el tiempo de reacción de cada tipo de conductor, para poder simular el tiempo que tarda un conductor en reaccionar ante un cambio,
+estableciéndose cuatro tipos de reacciones, independientes del tipo de conductor, que se muestran en la tabla \ref{TB:REACTION_TYPES} y donde se puede observar
+la proporción de conductores que tienen cada tipo de reacción.
+
+\begin{table}[Tipos de tiempos de reacción]{TB:REACTION_TYPES}{Características de los tiempos de reacción del modelo. Se muestran los tiempos de reacción de cada tipo, y la proporción de conductores que los tienen.}
+    \begin{tabular}{| c | c | c |}
+        % {\textwidth}{@{\extracolsep{\fill}} | c | c | c | c | }
+        \hline
+        \textbf{Tipo} & \textbf{Tiempo de Reacción} & \textbf{Proporción}\\
+        \hline
+        \textbf{Rápido} & 1 segundo & 7.5\% \\
+        \hline
+        \textbf{Normal rápido} & 2 segundos & 25\% \\
+        \hline
+        \textbf{Normal} & 3 segundos & 35\% \\
+        \hline
+        \textbf{Normal lento} & 4 segundos & 25\% \\
+        \hline
+        \textbf{Lento} & 5 segundos & 7.5\% \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\paragraph{Tipos de Vehículos}
+
+Además de los tipos de conductores, es necesario definir los tipos de vehículos que se considerarán en el modelo. En este caso, se han definido cuatro tipos
+de vehículos, que se describen en la tabla \ref{TB:VEHIC_TYPES}. Se ha considerado que los vehículos más grandes (camiones y furgonetas) tienen una longitud
+mayor, y por tanto, una velocidad máxima menor que sedanes y motocicletas. Además, se ha establecido que las motocicletas son más rápidas que los sedanes,
+principalmente para poder tener distintos tipos de vehículos con distintos patrones de velocidad.
+
+\begin{table}[Tipos de vehículos]{TB:VEHIC_TYPES}{Características de los vehículos del modelo.}
+    \begin{tabular}{| c | c | c | c | c |}
+        % {\textwidth}{@{\extracolsep{\fill}} | c | c | c | c | c | }
+        \hline
+        \textbf{Tipo} & \textbf{Longitud} & \textbf{Velocidad Mínima} & \textbf{Velocidad Máxima} & \textbf{Proporción} \\
+        \hline
+        \textbf{Camión} & 8 metros & 55 km/h & 80 km/h & 10\% \\
+        \hline
+        \textbf{Furgoneta} & 4.5 metros & 65 km/h & 100 km/h & 15\% \\
+        \hline
+        \textbf{Sedán} & 3.5 metros & 75 km/h & 120 km/h & 55\% \\
+        \hline
+        \textbf{Motocicleta} & 2 metros & 90 km/h & 130 km/h & 20\% \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[Tipos de conductores]{TB:DRIVER_TYPES_SPEEDS}{Características de los conductores del modelo.}
+    \begin{tabular}{| c | c | c | c | c | c |}
+        % {\textwidth}{@{\extracolsep{\fill}} | c | c | c | c | c | c | }
+        \hline
+        \textbf{Tipo} & \textbf{Factor} & \textbf{Camión} & \textbf{Furgoneta} & \textbf{Sedán} & \textbf{Motocicleta} \\
+        \hline
+        \textbf{Cauto} & 0.8 & 64 km/h & 80 km/h & 96 km/h & 104 km/h \\
+        \hline
+        \textbf{Normal} & 1.0 & 80 km/h & 100 km/h & 120 km/h & 130 km/h \\
+        \hline
+        \textbf{Arriesgado} & 1.1 & 88 km/h & 110 km/h & 132 km/h & 143 km/h \\
+        \hline
+        \textbf{Agresivo} & 1.2 & 96 km/h & 120 km/h & 144 km/h & 156 km/h \\
+        \hline
+        \textbf{Muy agresivo} & 1.3 & 104 km/h & 130 km/h & 156 km/h & 169 km/h \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\paragraph{Características de la Vía}
+
+Para poder simular el comportamiento de los conductores, es necesario definir las características de la vía en la que se desarrollarán las simulaciones.
+
+En este caso, se ha considerado una vía simple, con dos carriles y una única dirección, sin carriles de aceleración o deceleración, en la que se permiten los adelantamientos por el carril izquierdo. La longitud
+de la vía es de 5000 metros, y se ha establecido una velocidad máxima de 130 km/h, que es la velocidad máxima de los vehículos más rápidos (las motocicletas), que podrá
+ser rebasada por los conductores más agresivos.
+
+Además, se ha establecido una longitud de \textit{sección} de 500 metros, que se utilizará para estimar la carga de conductores en diferentes
+segmentos de la vía y aceptar o rechazar nuevos vehículos, esto es, que si se quieren añadir nuevos vehículos a la vía, se comprobará si la carga de la sección en
+la que se quiere añadir el vehículo (siempre la primera, al no contar la vía con carriles de aceleración o deceleración) es inferior a un umbral, que se detallará en
+la sección \ref{SEC:EXPERIMENTALDESIGN}. En caso de que la carga sea inferior al umbral, se añadirá el vehículo a la vía, y en caso contrario, se rechazará.
+
+Los vehículos y tiempos de reacción de estos son escogidos de forma aleatoria siguiendo los pesos probabilísticos establecidos en la columna de proporción de
+las tablas \ref{TB:VEHIC_TYPES} y \ref{TB:REACTION_TYPES} respectivamente, y para cada tipo de conductor se escogerán distintas combinaciones para analizar
+el comportamiento de los conductores en diferentes situaciones, detallado en la sección \ref{SEC:EXPERIMENTALDESIGN}.
+La velocidad de los vehículos se establece en función del tipo de vehículo y del tipo de conductor uniformemente según la tabla \ref{TB:DRIVER_TYPES_SPEEDS}.
+
+Por último, se ha considerado que la vía no presenta condiciones adversas, como el clima o el estado de la carretera, que podrían influir en el comportamiento de los
+conductores, pero que queda fuera del alcance de este modelo.
+
+\paragraph{Otros Parámetros}
+
+% Funcionamiento de los accidentes
+
+Además de los parámetros mencionados anteriormente, es necesario definir otros parámetros que permitan simular el comportamiento de los conductores en situaciones
+de tráfico adversas, como accidentes o atascos.
+
+En este caso, se ha considerado que los accidentes se producen cuando un vehículo colisiona con otro, es decir, cuando las posiciones de los vehículos quedan superpuestas
+en función de la longitud de cada uno y el punto que ocupan en el espacio de una dimensión sobre la que avanzan (considerado el punto central del vehículo). En caso de que
+se produzca un accidente, se detendrán los vehículos implicados en el mismo, y se establecerá un tiempo de espera de $15s$ por cada vehículo implicado en el accidente hasta
+que se limpie la vía, momento en el que los vehículos implicados dejarán de formar parte de la simulación. Se calcula el tiempo de limpieza de un accidente según
+la ecuación \ref{EQ:ACC_CLEANING_TIME}, donde $N_{\text{vehicles}}$ es el número de vehículos implicados en el accidente.
+
+\begin{equation}[EQ:ACC_CLEANING_TIME]{Tiempo de limpieza de un accidente}
+    t_{\text{expiration}} = 15s \cdot N_{\text{vehicles}}
+\end{equation}
+
+En ningún caso los conductores implicados reanudarán la marcha, y su velocidad se establecerá a $0 \, km/h$ hasta que se limpie la vía. De esta forma, naturalmente
+surgirán atascos (además de por otras variantes como la propia saturación de la vía en condiciones de alta densidad de tráfico), que se podrán analizar en las
+simulaciones. En las simulaciones, el umbral de accidentes se establecerá en $0.1$, es decir, si en algún momento la simulación supera el $10\%$ de accidentes, se
+detendrá y no se considerará válida para el análisis de tiempos, aunque sí se tendrá en cuenta para el análisis de accidentes.
+

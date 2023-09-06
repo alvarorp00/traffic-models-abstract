@@ -1,0 +1,48 @@
+En esta sección se detallará la estructura del modelo de simulación usado en el estudio, incluyendo un diagrama de clases
+y una explicación breve de las clases principales. 
+
+\begin{figure}[Diagrama de clases del modelo]{FIG:CLASS_DIAGRAM}{
+    Diagrama de clases del modelo de simulación. Se han omitido la mayoría de métodos y atributos no principales
+    para facilitar la comprensión del diagrama.
+}
+    \image{15cm}{}{pictures/traffic-models-diagram.png}
+\end{figure}
+
+% Lista de principales clases y explicación breve de cada una
+
+\begin{description}
+    \item[Engine] \hfill \\
+        Clase principal del modelo. Se encarga de inicializar el sistema y ejecutar la simulación. En cada iteración de la simulación
+        se encarga de actualizar el estado del sistema y de recopilar los datos necesarios para el análisis. Contiene el modelo
+        en simulación y su histórico.
+    \item[Model] \hfill \\
+        Clase que representa el modelo de simulación. Contiene los métodos principales para actualizar el estado del sistema.
+        Es la clase que contiene los conductores, los accidentes y la vía.
+    \item[RunConfig] \hfill \\
+        Clase que representa la configuración de una simulación. Contiene los parámetros de la simulación, como la densidad de tráfico,
+        la saturación, el número de carriles, etc. Se encarga de cargar los datos de un fichero de configuración. Se usa como parámetro
+        para la clase \texttt{Engine}.
+    \item[Driver] \hfill \\
+        Clase que representa a un conductor. Contiene los métodos para actualizar el estado del conductor, como la velocidad, la posición,
+        el tiempo de conducción, etc. Se asocia con un tipo (\texttt{DriverType}), que determina el comportamiento del conductor;
+        un tiempo de reacción, \texttt{DriverReactionTime}, que determina el tiempo que tarda el conductor en reaccionar ante un accidente;
+        y un tipo de vehículo, \texttt{CarType}.
+    \item[DriverType] \hfill \\
+        Clase que representa un tipo de conductor. Puede ser CAUTIOUS, NORMAL, RISKY, AGGRESSIVE o RECKLESS.
+    \item[DriverReactionTime] \hfill \\
+        Clase que representa el tiempo de reacción de un conductor. Puede ser FAST, NORMAL FAST, NORMAL, NORMAL SLOW o SLOW.
+    \item[CarType] \hfill \\
+        Clase que representa el tipo de vehículo de un conductor. Puede ser TRUCK, VAN, SEDAN o MOTORCYCLE.
+    \item[DriverDistributions] \hfill \\
+        Clase que contiene las distribuciones de probabilidad de los conductores. Se usa para generar los conductores de forma aleatoria,
+        inicializar y actualizar sus velocidades, generar el tiempo que han de permanecer en el carril, etc.
+    \item[Accident] \hfill \\
+        Clase que representa un accidente. Contiene los métodos para actualizar el estado del accidente, como el tiempo de duración,
+        el tiempo restante hasta ser limpieado y los conductores implicados.
+    \item[Statistics] \hfill \\
+        Clase que contiene los datos estadísticos de la simulación. Se encarga de recopilar los datos necesarios para el análisis.
+\end{description}
+
+El modelo está pensado de forma que pasando como parámetro un objeto de la clase \texttt{RunConfig}, que carga los datos de un fichero
+de configuración (\textit{config.py}), se pueda modificar de forma sencilla los parámetros de este mismo y pasar este objeto como
+argumento a la clase \texttt{Engine}. De esta forma se puede ejecutar el modelo con diferentes configuraciones de forma sencilla.

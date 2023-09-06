@@ -1,7 +1,54 @@
-\babel@toc {spanish}{}\relax
+\babel@toc {nil}{}\relax
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Simulaciones exitosas}}{16}{figure.caption.53}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Porcentaje de accidentes por tipo de conductor.}}{17}{figure.caption.55}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Mediana de conductores que completaron la simulación}}{18}{figure.caption.57}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Mediana de tiempos de finalización en función de la configuración.}}{19}{figure.caption.59}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Resultados para conductores Cautos y Temerarios, separados}}{21}{figure.caption.60}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces lof}}{21}{figure.caption.60}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces lof}}{21}{figure.caption.60}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces lof}}{21}{figure.caption.60}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces lof}}{21}{figure.caption.60}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Resultados para conductores Cautos y Temerarios, conviviendo 1}}{22}{figure.caption.61}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces lof}}{22}{figure.caption.61}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces lof}}{22}{figure.caption.61}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Resultados para conductores Cautos y Temerarios, conviviendo 2}}{22}{figure.caption.62}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces lof}}{22}{figure.caption.62}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces lof}}{22}{figure.caption.62}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Mediana de tiempos y accidentes de conductores Cautos}}{23}{figure.caption.63}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Resultados para conductores Normales y Agresivos, separados}}{24}{figure.caption.64}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces lof}}{24}{figure.caption.64}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces lof}}{24}{figure.caption.64}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces lof}}{24}{figure.caption.64}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces lof}}{24}{figure.caption.64}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Resultados para conductores Normales y Agresivos, conviviendo 1}}{25}{figure.caption.65}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces lof}}{25}{figure.caption.65}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces lof}}{25}{figure.caption.65}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Resultados para conductores Normal y Agresivos, conviviendo 2}}{25}{figure.caption.66}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces lof}}{25}{figure.caption.66}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces lof}}{25}{figure.caption.66}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Mediana de tiempos y accidentes de conductores Normales}}{26}{figure.caption.67}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Resultados para conductores Arriesgados}}{27}{figure.caption.68}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces lof}}{27}{figure.caption.68}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces lof}}{27}{figure.caption.68}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Resultados para conductores Arriesgados y Agresivos, conviviendo}}{27}{figure.caption.69}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces lof}}{27}{figure.caption.69}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces lof}}{27}{figure.caption.69}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Resultados para diferentes conductores, conviviendo}}{28}{figure.caption.70}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces lof}}{28}{figure.caption.70}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces lof}}{28}{figure.caption.70}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Mediana de tiempos y accidentes de conductores Arriesgados}}{29}{figure.caption.71}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Comparación de tiempos y accidentes por tipo de conductor}}{30}{figure.caption.72}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Mediana de tiempos y accidentes en diferentes distribuciones}}{31}{figure.caption.73}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Conductores que terminan en Cautos/Temerarios y Normales/Agresivos}}{32}{figure.caption.74}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces lof}}{32}{figure.caption.74}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces lof}}{32}{figure.caption.74}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces lof}}{32}{figure.caption.74}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces lof}}{32}{figure.caption.74}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Diagrama de clases del modelo}}{45}{figure.caption.84}%

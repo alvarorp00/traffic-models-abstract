@@ -1,0 +1,22 @@
+Para replicar y/o modificar las simulaciones realizadas en este estudio, es necesario ajustar los parámetros específicos dentro de
+la clase \texttt{RunConfig} (o bien directamente sobre el fichero de configuración \textit{config.py}, aunque en el caso de querer parametrizar
+las simulaciones la ruta a seguir es alterar los valores de \texttt{RunConfig} una vez cargados).
+Esta clase se encarga de cargar los datos de configuración para cada simulación, y se pueden ajustar según las necesidades o intereses del usuario.
+
+A continuación, se proporciona un código de ejemplo para replicar las simulaciones realizadas en este estudio, que se puede consultar en
+\ref{COD:RUN_CONFIG_ENGINE}.
+
+\PythonCode[COD:RUN_CONFIG_ENGINE]{Cargar configuración y ejecutar simulación}{
+    Se muestra un ejemplo de cómo cargar la configuración de una simulación a partir de la clase
+    \texttt{RunConfig} y ejecutar la simulación con esta configuración.    
+}{start.py}{1}{10}{1}
+
+Si se desea realizar cambios, o bien parametrizar las simulaciones, se puede realizar lo observado en \ref{SIM_1_EXAMPLE},
+donde se muestra el código necesario para realizar las simulaciones correspondientes al primer caso de la tabla
+\ref{TB:SIMULATION_STRATEGIES}.
+
+\PythonCode[SIM_1_EXAMPLE]{Ejemplo de simulación con parámetros personalizados}{
+    Se muestra un ejemplo de cómo cargar la configuración de una simulación a partir de la clase
+    \texttt{RunConfig} y ejecutar la simulación con esta configuración. Este código se corresponde
+    con el primer caso de la tabla \ref{TB:SIMULATION_STRATEGIES}.
+}{run_1.py}{1}{67}{1}

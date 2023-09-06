@@ -9,15 +9,15 @@
 
 
 % \documentclass[epsbased,copyright,final,printable,covers,extendedindex,firstnumbered,tfm,gnuplot,english]{tfgtfmthesisuam}
-\documentclass[epsbased,copyright,final,covers,extendedindex,firstnumbered,tfm,gnuplot,english]{tfgtfmthesisuam}
+\documentclass[epsbased,copyright,final,extendedindex,firstnumbered,tfm,gnuplot,spanish,loa,loe,lof,lot]{tfgtfmthesisuam} % english
 
-\advisor{Fernando Rubio Diez, Ismael Rodríguez Laguna}
-\levelin{Formal Methods in Computer Science}
+\advisor{Fernando Rubio Díez e Ismael Rodríguez Laguna}
+\levelin{Métodos Formales en Ingeniería Informática}
 \title{Estudio de modelos de tráfico}
 % \subtitle{Si hace falta subtítulo}
 \author{Álvaro Rodríguez Palacios}
 \privateaddress{C\textbackslash\ Francisco Tomás y Valiente Nº 11}
-\copyrightdate{September 2023}
+\copyrightdate{Septiembre 2023}
 
 % \dedication{A mi mujer y a mis hijos}
 % \famouscite{Lo peor es cuando has terminado un capítulo\\y la máquina de escribir no aplaude. \\[0.1em] \begin{flushright}Orson Welles\end{flushright}}
@@ -26,8 +26,8 @@
 \resumenfile{start/resumen}
 \abstractfile{start/abstract}
 
-\keywords{Algunas}
-\palabrasclave{Otras}
+\keywords{Driving styles, traffic simulation, road safety, vehicular safety, traffic efficiency}
+\palabrasclave{Estilos de conducción, simulación de tráfico, seguridad vial, seguridad vehicular, eficiencia del tráfico}
 
 % \coverdata
 % {
@@ -45,43 +45,35 @@
 
 \begin{document}
 
-% \chapter{Introducción\label{CAP:INTRODUCCION}}{introduccion/introduccion}
-%   \section{Motivación\label{SEC:MOTIVACION}}{introduccion/motivacion}
-%   \section{Objetivos\label{SEC:OBJETIVOS}}{introduccion/objetivos}
-%   \section{Estructura del Documento\label{SEC:ESTRUCTURA}}{introduccion/estructura}
+\chapter{Introducción\label{CAP:INTRODUCCION}}{introduction/introduction}
+  \section{Motivación\label{SEC:MOTIVACION}}{introduction/motivation}
+  \section{Objetivos\label{SEC:OBJETIVOS}}{introduction/objectives}
 
-\chapter{Introduction\label{CAP:INTRODUCCION}}{introduction/introduction}
-  \section{Motivation\label{SEC:MOTIVACION}}{introduction/motivation}
-  \section{Objectives\label{SEC:OBJETIVOS}}{introduction/objectives}
+\chapter{Marco Teórico\label{CAP:THEORETICALFRAMEWORK}}{theoretical-framework/theoretical-framework}
+  \section{Antecedentes\label{SEC:BACKGROUND}}{theoretical-framework/background}
+  \section{Conceptos Clave\label{SEC:KEYCONCEPTS}}{theoretical-framework/key-concepts}
+  \section{Modelos Relacionados\label{SEC:SIMULATIONMODEL}}{theoretical-framework/related-models}
 
-\chapter{Theoretical Framework\label{CAP:THEORETICALFRAMEWORK}}{theoretical-framework/theoretical-framework}
-  \section{Background\label{SEC:BACKGROUND}}{theoretical-framework/background}
-  \section{Key Concepts\label{SEC:KEYCONCEPTS}}{theoretical-framework/key-concepts}
-  \section{Related Models\label{SEC:SIMULATIONMODEL}}{theoretical-framework/related-models}
+\chapter{Metodología\label{CAP:METHODOLOGY}}{methodology/methodology}
+  \section{Modelo de Simulación al Detalle\label{SEC:SIMULATIONMODELD}}{methodology/simulation-model}
+  \section{Herramientas y Tecnologías\label{SEC:TOOLS}}{methodology/tools}
+  \section{Diseño Experimental\label{SEC:EXPERIMENTALDESIGN}}{methodology/experimental-design}
+  \section{Consideraciones\label{SEC:CONSIDERATIONS}}{methodology/considerations}
 
-\chapter{Methodology\label{CAP:METHODOLOGY}}{methodology/methodology}
-  \section{Simulation Model in Detail\label{SEC:SIMULATIONMODELD}}{methodology/simulation-model}
-  \section{Tools and Technologies\label{SEC:TOOLS}}{methodology/tools}
-  \section{Experimental Design\label{SEC:EXPERIMENTALDESIGN}}{methodology/experimental-design}
-  \section{Considerations\label{SEC:CONSIDERATIONS}}{methodology/considerations}
+\chapter{Resultados\label{CAP:RESULTS}}{results/results}
+  \section{Resultados de las Simulaciones\label{SEC:SIMULATIONRESULTS}}{results/simulation-results}
+  \section{Análisis de los Resultados\label{SEC:ANALYSIS}}{results/analysis}
 
-\chapter{Results\label{CAP:RESULTS}}{results/results}
-  \section{Simulation Results\label{SEC:SIMULATIONRESULTS}}{results/simulation-results}
-  \section{Analysis of Results\label{SEC:ANALYSIS}}{results/analysis}
+\chapter{Discusión\label{SEC:DISCUSSION}}{discussion/discussion}
 
-\chapter{Discussion\label{CAP:DISCUSSION}}{discussion/discussion}
+\chapter{Conclusiones y Trabajo Futuro\label{CAP:CONCLUSIONS}}{conclusions/conclusions-future-work}
+  \section{Conclusiones\label{SEC:CONCLUSIONS}}{conclusions/conclusions}
+  \section{Trabajo Futuro\label{SEC:FUTUREWORK}}{conclusions/future-work}
 
-\chapter{Conclusions and Future Work\label{CAP:CONCLUSIONS}}{conclusions/conclusions}
-  \section{Conclusions\label{SEC:CONCLUSIONS}}{conclusions/conclusions}
-  \section{Future Work\label{SEC:FUTUREWORK}}{conclusions/future-work}
+\appendix
 
-% \appendix
-
-% \chapter{Reescalado de Trayectorias y Medición de Difusión\label{CAP:SCALEDTR}}{anexos/difusion}
-%   % \section{Reescalado del movimiento browniano\label{SEC:SBM}}{anexos/scaled}
-%   % \section{\textit{tMSD} vs. \textit{eMSD}\label{SEC:TVSEMSD}}{anexos/tmsdvsemsd}
-% \chapter{Simulaciones y Tiempos\label{CAP:SIMSTIMES}}{anexos/sims}
-% \chapter{Implementaciones y Código Desarrollado\label{CAP:CODES_DONE}}{anexos/implementacion}
-
+\chapter{Detalles del Modelo y Guía de Uso\label{CAP:APPENDIX}}{appendix/appendix}
+  \section{Detalles del Modelo\label{SEC:MODELDETAILS}}{appendix/model-details}
+  \section{Guía de Uso\label{SEC:GUIDE}}{appendix/guide}
 
 \end{document}

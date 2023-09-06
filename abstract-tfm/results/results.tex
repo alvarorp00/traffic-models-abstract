@@ -1,0 +1,24 @@
+Tras llevar a cabo el proceso de simulación descrito en la metodología, se han obtenido
+una serie de datos que arrojan algo de luz sobre el comportamiento y evolución de los
+conductores en diferentes escenarios de tráfico. Recuérdese que se han realizado 18 simulaciones,
+cada una con sus propias condiciones y parámetros, permitiendo explorar una variedad de situaciones y obtener una visión completa del sistema.
+
+Una de las primeras impresiones se obtiene al analizar en la figura \ref{FIG:SUCCESS_RATE} la evolución del porcentaje de
+simulaciones que lograron terminar sobre el total de simulaciones ejecutadas que se detallaron en la tabla \ref{TB:SIMULATION_STRATEGIES}.
+(200 veces se repitió la simulación para cada configuración de tráfico). Esta gráfica brinda una idea de cómo se comporta el sistema
+y cómo la densidad de tráfico y la saturación pueden influir en la viabilidad de las simulaciones.
+En la figura se puede observar que, en general, las simulaciones con la densidad de tráfico más baja
+(10 vehículos en 500 metros) obtienen un porcentaje de éxito que, salvo en los casos de conductores cautos y normales,
+decae rápidamente. También se puede observar la pequeña tasa de éxito de las simulaciones donde el grupo predominante
+son los conductores más agresivos, lo que sugiere que este tipo de conductores pueden ser más propensos a
+provocar accidentes o situaciones de riesgo.
+
+\begin{figure}[Simulaciones exitosas]{FIG:SUCCESS_RATE}{Porcentaje de simulaciones exitosas, i.e. que lograron terminar con un ratio de accidentes < 10\% en
+    las distintas configuraciones de saturación, en función de la densidad de tráfico introducida. Cada punto representa la mediana de los resultados obtenidos
+    de las 200 simulaciones realizadas para cada configuración, y cada línea cada una de las distintas simulaciones realizadas.}
+    \image{15cm}{}{pictures/percentages.png}
+\end{figure}
+
+A continuación, se desglosarán los resultados obtenidos para cada métrica, ofreciendo un análisis y comparativas
+para los escenarios simulados. Cabe destacar que, debido a la gran cantidad de datos obtenidos, se ha optado por
+mostrar los resultados más relevantes y significativos con el fin de facilitar la interpretación de los mismos.

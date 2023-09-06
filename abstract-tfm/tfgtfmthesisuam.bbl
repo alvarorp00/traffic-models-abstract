@@ -1,3 +1,43 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{leutzbach1988}
+W.~Leutzbach, {\em Introduction to the Theory of Traffic Flow}, vol.~204.
+\newblock Springer\_Verlag Berlin Heidelberg, 1988.
+
+\bibitem{daganzo2002}
+C.~F. Daganzo, ``A behavioral theory of multi-lane traffic flow part i: Long homogeneous freeway sections,'' {\em Transportation Research Part B: Methodological}, vol.~36, no.~2, pp.~131--158, 2002.
+
+\bibitem{sugiyama2008}
+Y.~Sugiyama, M.~Fukui, M.~Kikuchi, K.~Hasebe, A.~Nakayama, K.~Nishinari, S.~Tadaki, and S.~Yukawa, ``Traffic jams without bottlenecks—experimental evidence for the physical mechanism of the formation of a jam,'' {\em New Journal of Physics}, vol.~10, p.~033001, 2008.
+
+\bibitem{lizbetin2017}
+J.~Lizbetin and L.~Bartuska, ``The influence of human factor on congestion formation on urban roads,'' in {\em Procedia engineering}, vol.~187, pp.~206--211, 2017.
+
+\bibitem{siuhi2021}
+S.~Siuhi, M.~Mamun, and J.~Mwakalonge, ``The significance of the posted minimum speed limits along interstate highways in South Carolina on traffic operation and safety,'' {\em Journal of Traffic and Transportation Engineering}, 2021.
+
+\bibitem{james2000}
+L.~James and D.~Nahl, {\em Road Rage and Aggressive Driving: Steering Clear of Highway Warfare}.
+\newblock Prometheus Books, 2000.
+
+\bibitem{dula2003}
+C.~S. Dula and M.~E. Ballard, ``Development and evaluation of a measure of dangerous, aggressive, negative emotional, and risky driving,'' {\em Journal of Applied Social Psychology}, vol.~33, no.~2, pp.~263--282, 2003.
+
+\bibitem{ulleberg2003}
+P.~Ulleberg and T.~Rundmo, ``Personality, attitudes and risk perception as predictors of risky driving behaviour among young drivers,'' {\em Safety Science}, vol.~41, no.~5, pp.~427--443, 2003.
+
+\bibitem{deffenbacher2003}
+J.~L. Deffenbacher, D.~M. Deffenbacher, R.~S. Lynch, and T.~L. Richards, ``Anger, aggression, and risky behavior: A comparison of high and low anger drivers,'' {\em Behaviour Research and Therapy}, vol.~41, no.~6, pp.~701--718, 2003.
+
+\bibitem{fisher2011}
+D.~Fisher, M.~Rizzo, J.~Caird, and J.~Lee, {\em Handbook of driving simulation for engineering, medicine, and psychology}.
+\newblock 01 2011.
+
+\bibitem{shinar2017}
+D.~Shinar, {\em Traffic Safety and Human Behavior}.
+\newblock Elsevier, 2~ed., 2017.
+
+\bibitem{teo2010}
+K.~T.~K. Teo, W.~Y. Kow, and Y.~Chin, ``Optimization of traffic flow within an urban traffic light intersection with genetic algorithm,'' in {\em 2010 Second International Conference on Computational Intelligence, Modelling and Simulation}, pp.~172--177, IEEE, 2010.
 
 \end{thebibliography}

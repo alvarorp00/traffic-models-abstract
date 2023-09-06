@@ -1,0 +1,14 @@
+\paragraph{Limitaciones del Estudio y Validez de los Modelos}
+El estudio no puede capturar cómo afectarían cambios en la climatología o estado de la carretera, ya que es un modelo muy simple que sirve principalmente como base para seguir desarrollando sobre él. Por ejemplo, podrían considerarse carriles de aceleración y deceleración, así como alternar el número de carriles durante el transcurso del viaje (aumentar a 3 y luego reducir a 2 otra vez, por ejemplo, para simular un carril de aceleración o deceleración).
+
+Además, al dividir a los conductores en 5 tipos, se pierde la capacidad de modelar conductores con características intermedias entre dos tipos, ya que se ha optado por una clasificación simple. Por ejemplo, un conductor que sea más agresivo que un conductor cauto, pero menos que un conductor normal, no podría ser modelado, lo que
+hace que el modelo sea menos realista. Además, no siempre todos los conductores se comportan de la misma manera, por lo que se pierde la capacidad de modelar conductores que se comporten de forma distinta en diferentes situaciones.
+
+\paragraph{Precauciones}
+El estudio bajo este modelo se considera simple, y pretende analizar a grandes rasgos la evolución de un sistema. Para asemejarse más a la realidad, se deberían detallar más parámetros que no se han tenido en cuenta.
+
+\paragraph{Escalabilidad}
+Al estar la vía dividida en secciones, podría ser viable alterar cada una independientemente, incluyendo otros carriles en una de ellas, por ejemplo. Lo que sería más difícil de plantear es incluir climatología o estado de la carretera, ya que implicaría hacer cambios profundos en las funciones de actualización de estado de los conductores.
+
+\paragraph{Decisiones de Diseño}
+Se optó por utilizar un espacio continuo para facilitar la actualización de la posición y tiempo discreto para relajar la complejidad al actualizar cada iteración.

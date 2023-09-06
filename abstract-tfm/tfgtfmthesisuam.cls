@@ -3453,7 +3453,7 @@ coordinates {(#1,0) (#2,0)};
 				Ponente: \@speaker \\[1\myem]
 			\fi
 			\vspace*{0.02\textheight}
-			\begin{center}\tfgdate\today \end{center}
+			\begin{center}\tfgdate Septiembre 2023 \end{center}
 		\end{center}
 	\else
 		\vspace*{0.15\textheight}
@@ -3484,7 +3484,7 @@ coordinates {(#1,0) (#2,0)};
 				Ponente: \@speaker \\[1\myem]
 			\fi
 			\vspace*{0.02\textheight}
-			\begin{center}\tfgdate\today \end{center}
+			\begin{center}\tfgdate Septiembre 2023 \end{center}
 		\end{center}
 	\fi
 

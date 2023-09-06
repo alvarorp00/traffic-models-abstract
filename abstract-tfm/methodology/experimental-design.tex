@@ -1,0 +1,218 @@
+\paragraph{Definición del Experimento}
+El propósito central de este experimento es analizar la influencia de la agresividad en la conducción sobre el tiempo global medio de viaje.
+Específicamente, se busca comprobar si un aumento en la proporción de conductores agresivos disminuye o aumenta este tiempo.
+
+Asímismo, se pretende explorar si estos conductores se benefician únicamente cuando hay una mayor presencia de conductores cautos.
+Aunque se espera que los conductores agresivos tengan tiempos de viaje global más cortos,
+se postula que este tipo de estrategia más agresiva seguida por estos conductores podría tener un efecto negativo no tanto en el tiempo de viaje,
+que debería ser menor, sino en cuántos conductores logran completar el viaje durante el tiempo de simulación en comparación con otros conductores
+que siguen estrategias más cautelosas.
+
+Es decir, se espera que los atascos producidos tanto por los accidentes como por la congestión del tráfico
+sean más frecuentes en las simulaciones con una mayor proporción de conductores agresivos.
+
+\paragraph{Parámetros Fijos}
+\begin{itemize}
+    \item Vía: longitud de 5000 metros, sección de 500 metros, 2 carriles.
+    \item Instantes de Simulación: 1000.
+    \item Proporción de tiempos de reacción, tipos de coche, distancias de seguridad: descrito detalladamente en la sección del modelo de simulación.
+    \item Presencia de conductores por carril (al ser introducidos a la vía): $15\%$ izquierdo, $85\%$ derecho.
+\end{itemize}
+
+\paragraph{Parámetros Variables}
+\begin{itemize}
+    \item Número de conductores en la primera sección: se incrementará de 10 en 10, desde 10 hasta 100.
+    \item Proporción de tipos de conductores: Se probarán distintas combinaciones y gradientes, detallado en la tabla \ref{TB:SIMULATION_STRATEGIES}.
+\end{itemize}
+
+\paragraph{Configuraciones de las Simulaciones}
+
+Se realizarán 18 simulaciones, con distintas configuraciones de tipos de conductores, que se muestran en la tabla \ref{TB:SIMULATION_STRATEGIES}.
+
+\begin{table}[Simulaciones de Estrategias]{TB:SIMULATION_STRATEGIES}{Composición de las estrategias de simulación.}
+    \begin{tabular}{| c | c | c | c | c | c |}
+        \hline
+        \textbf{Simulación} & \textbf{Cautos} & \textbf{Normal} & \textbf{Arriesgado} & \textbf{Agresivo} & \textbf{Temerario} \\
+        \hline
+        1 & 100\% & 0\% & 0\% & 0\% & 0\% \\
+        \hline
+        2 & 0\% & 100\% & 0\% & 0\% & 0\% \\
+        \hline
+        3 & 0\% & 0\% & 100\% & 0\% & 0\% \\
+        \hline
+        4 & 0\% & 0\% & 0\% & 100\% & 0\% \\
+        \hline
+        5 & 0\% & 0\% & 0\% & 0\% & 100\% \\
+        \hline
+        6 & 50\% & 0\% & 0\% & 0\% & 50\% \\
+        \hline
+        7 & 0\% & 50\% & 0\% & 50\% & 0\% \\
+        \hline
+        8 & 90\% & 0\% & 0\% & 0\% & 10\% \\
+        \hline
+        9 & 0\% & 90\% & 0\% & 10\% & 0\% \\
+        \hline
+        10 & 50\% & 50\% & 0\% & 0\% & 0\% \\
+        \hline
+        11 & 0\% & 0\% & 50\% & 50\% & 0\% \\
+        \hline
+        12 & 20\% & 20\% & 20\% & 20\% & 20\% \\
+        \hline
+        13 & 40\% & 30\% & 15\% & 10\% & 5\% \\
+        \hline
+        14 & 5\% & 10\% & 15\% & 30\% & 40\% \\
+        \hline
+        15 & 25\% & 25\% & 25\% & 25\% & 0\% \\
+        \hline
+        16 & 0\% & 25\% & 25\% & 25\% & 25\% \\
+        \hline
+        17 & 0\% & 33\% & 34\% & 33\% & 0\% \\
+        \hline
+        18 & 5\% & 15\% & 60\% & 15\% & 5\% \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\paragraph{Métricas de Evaluación}
+\begin{itemize}
+    \item Tiempo total de viaje: evaluará la mediana del tiempo total que toma a todos los vehículos recorrer la distancia completa.
+    \item Número de accidentes: registra la mediana del total de accidentes ocurridos durante la simulación.
+    \item Número de vehículos que completaron el viaje: evaluará la mediana del número de vehículos que lograron completar el viaje.
+\end{itemize}
+
+\paragraph{Procedimiento}
+
+\subparagraph{Inicialización}
+
+Estado inicial de la carretera: vacía.
+
+El tiempo evolucionará de forma discreta. Es decir, en el modelo las variables cambiarán en instantes específicos y separados,
+en lugar de cambiar continuamente: en lugar de tener un flujo constante de tiempo, el tiempo se divide en unidades o pasos separados.
+
+En el contexto de simulaciones, trabajar con tiempo discreto permite analizar el comportamiento del sistema en momentos determinados,
+facilitando el procesamiento y la comprensión de los eventos. Cada instante se corresponderá con un segundo de tiempo real.
+
+En cada segundo (cada instante en las simulaciones), se evalúa si el número de conductores en la primera sección es inferior al límite máximo establecido para el caso en consideración.
+Si la condición se cumple, se introduce un nuevo conductor a la vía.
+
+\subparagraph{Ejecución}
+
+Dado que el tiempo es discreto, en cada iteración se considera un \textit{instante congelado} del tiempo.
+La \textit{velocidad de reacción} del conductor determina qué instante discreto (en segundos) del pasado de la simulación se escogerá
+para tomar decisiones (1-5 instantes anteriores, como se explicó en la sección \ref{SEC:SIMULATIONMODELD}).
+Para actualizar la posición y velocidad de cada conductor, se invoca al algoritmo \ref{ALG:SPEED_LANE_UPDATE}.
+
+\subparagraph{Métodos de Actualización}
+
+Las decisiones específicas sobre la actualización de la velocidad y el carril se basan en los algoritmos \ref{ALG:SPEED_LANE_UPDATE}, \ref{ALG:SPEED_UPDATE} y \ref{ALG:LANE_UPDATE}.
+Para una visión más detallada del código y la implementación completa, se puede acceder al repositorio del proyecto en GitHub\footnote{Enlace del repositorio: \url{https://github.com/alvarorp00/traffic-models}}.
+
+\begin{itemize}
+    \item Si no hay conductor delante, el conductor intentará alcanzar su velocidad máxima.
+    \item Si hay un conductor delante:
+    \begin{itemize}
+        \item Evalúa si puede adelantar, es decir, si su velocidad es mayor y el carril contiguo está libre.
+        \item Si no puede adelantar, ajusta su velocidad para mantener una distancia segura con el conductor de delante.
+    \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+    \item Determina si el conductor puede o debe cambiar de carril basándose en condiciones como la presencia de otro conductor delante,
+    la existencia de espacio libre en el carril contiguo, el espacio libre en el carril actual y el tiempo que lleva en el carril actual
+    (hay un mínimo de 8-12 segundos elegidos uniformemente antes de que el conductor pueda cambiar de carril para evitar cambios de carril constantes).
+    \item Si no hay necesidad o no es posible cambiar de carril, el conductor permanecerá en su carril actual.
+\end{itemize}
+
+
+\begin{algorithmN}[ALG:SPEED_LANE_UPDATE]{Actualización de velocidad y carril.}{Método para actualizar la velocidad y el carril del conductor.}
+    \SetKwInOut{Input}{Entrada}
+    \SetKwInOut{Output}{Salida}
+    \Input{$driver$, conductor actual}
+    \Input{$state$, estado del modelo de tráfico}
+    \Output{$driver$, conductor actualizado}
+    % $\text{Obtiene conductor delante y detrás de driver}$\;
+    $dfront \leftarrow \text{driver\_at\_front(state)}$\;
+    $dback \leftarrow \text{driver\_at\_back(state)}$\;
+    $lane \leftarrow \textbf{lane\_update(driver, state)}$\;
+
+    \If{$lane \ne driver.lane$} {
+        $dfront \leftarrow \text{driver\_at\_front(state)}$\;
+        $dback \leftarrow \text{driver\_at\_back(state)}$\;
+    }
+
+    $speed \leftarrow \textbf{speed\_update(driver, dfront, dback)}$\;
+    $driver.speed \leftarrow speed$\;
+    \Return{$driver$}\;
+\end{algorithmN}
+
+\begin{algorithmN}[ALG:SPEED_UPDATE]{Actualización de la velocidad.}{Método para actualizar la velocidad del conductor.}
+    \SetKwInOut{Input}{Entrada}
+    \SetKwInOut{Output}{Salida}
+    \Input{$driver$, conductor actual}
+    \Input{$dfront$, conductor al frente}
+    \Input{$dback$, conductor atrás}
+    \Output{$speed$, Velocidad actualizada}
+
+    \uIf{$\exists \, dfront$}{
+        $safe\_distance \leftarrow \text{calculate\_safe\_distance(driver)}$\;
+        $distance\_to\_front \leftarrow \text{calculate\_distance\_to\_front(driver, dfront)}$\;
+        $desired\_speed \leftarrow \text{calculate\_desired\_speed(driver, safe\_distance, distance\_to\_front)}$\;    
+    }\Else{
+        $desired\_speed \leftarrow \text{get\_max\_speed(driver)}$\;
+    }
+    \Return{$\min(desired\_speed, \text{get\_max\_speed\_by\_type(driver)})$}\;
+\end{algorithmN}
+    
+\begin{algorithmN}[ALG:LANE_UPDATE]{Actualización del carril.}{Método para actualizar el carril del conductor.}
+    \SetKwInOut{Input}{Entrada}
+    \SetKwInOut{Output}{Salida}
+    \Input{$driver$, conductor actual}
+    \Input{$state$, estado de la simulación}
+    \Output{$lane$, carril actualizado}
+
+    $current\_lane \leftarrow driver.\text{get\_current\_lane()}$\;
+    \uIf{$\text{can\_overtake(driver, state)}$}{
+        $next\_lane \leftarrow \text{next\_lane(current\_lane)}$\;
+        $can\_switch\_lane \leftarrow \text{can\_switch\_to\_lane(driver, state, next\_lane)}$\;
+        \uIf{$can\_switch\_lane$ and $driver.time\_in\_lane == 0$}{
+            $driver.time\_in\_lane \leftarrow \text{calculate\_time\_in\_lane(driver)}$\;
+            $lane \leftarrow next\_lane$\;
+        }
+        \Else{
+            $lane \leftarrow current\_lane$\;
+        }
+    }
+    \uElseIf{$\text{can\_return\_lane(driver, state, current\_lane)}$}{
+        $lane \leftarrow \text{prev\_lane(current\_lane)}$\;
+    }
+    \Else{
+        $lane \leftarrow current\_lane$\;    
+    }
+    \Return{$lane$}\;
+\end{algorithmN}
+
+
+\paragraph{Finalización y Recopilación de Datos}
+
+Al concluir cada simulación, se procede a una fase de recopilación y almacenamiento de datos críticos para el análisis posterior.
+Los pasos que se llevan a cabo se detallan a continuación.
+
+\subparagraph{Finalización de la Simulación} 
+
+Una vez que se alcanza el término de la simulación, ya sea por tiempo o por cumplimiento de alguna condición preestablecida, se detiene la ejecución y se pasa al proceso de consolidación de los datos obtenidos.
+
+\subparagraph{Procesamiento de los Resultados}
+
+Antes de guardar los datos, se realizan cálculos intermedios para obtener métricas relevantes. En este caso, dada la naturaleza de los datos y para reducir el impacto de valores atípicos o extremos, se decide usar la mediana. Por lo tanto, se calculan las medianas de:
+
+\begin{itemize}
+    \item Tiempo que tardan los conductores en completar el trayecto.
+    \item Accidentes ocurridos durante la simulación.
+    \item Número de conductores que han logrado finalizar el recorrido.
+\end{itemize}
+
+Adicionalmente, estos cálculos se segmentan y se realizan por cada tipo de conductor, permitiendo un análisis más detallado y categorizado.
+
+\subparagraph{Almacenamiento de Datos}
+
+Los resultados de cada simulación se almacenan en un fichero CSV, permitiendo preservar y analizar posteriormente los datos obtenidos. Además, se generan gráficas para visualizar los resultados de forma más intuitiva.
